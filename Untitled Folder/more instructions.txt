@@ -1,0 +1,25 @@
+
+The transmitter consists of a linear array of 31 elements, each $\lambda/2$ long, with an inter-element spacing of $\lambda/2$. The receiver is a linear array of 1 element, $\lambda/2$ long, positioned at a distance $l = 100\lambda$ from the transmitter at a random angle inside \alpha=45 degrees. Two scattering points are located at coordinates ($x = 40\lambda$; $y = -30\lambda$) and ($x = 70\lambda$; $y = 50\lambda$).
+
+According to the design specifications, the far-field sidelobes of the TX antenna outside the angular range (-$\alpha, \alpha$), defined by the axis connecting the centers of the TX and RX antennas, must be lower than $-40$dB, and alpha = 45 degrees.
+
+can you optimize this for 4 levels of communication:
+Let $\vet{x}_1 \exp[i(h-1)\pi/2] \in \mathbb{C}^N$ represent the array excitation vector corresponding to the first MIMO channel constellation $s_{1h}$, where $h=1,...,4$, and $\vet{x}_2 \exp(i(h-1)\pi/2) \in \mathbb{C}^N$, with $h=1,...,4$
+
+
+
+
+
+can you implement this for random matrices A and B, where m = -40dB;
+\[
+\text{arg} \min_{x_1, x_2} \left( ||\hat{\vet{A}}\vet{x}_1 - \hat{\vet{u}}_1||_2 + ||\hat{\vet{A}}\vet{x}_2 - \hat{\vet{u}}_2||_2 \right)
+\]
+subject to the following constraints:
+\[
+|\bar{\vet{B}}(\vet{x}_1 + \vet{x}_2)| < \bar{\vet{m}}, \quad
+\Big| \bar{\vet{B}} \left( \vet{x}_1 + \vet{x}_2 \exp\left(\frac{\pi}{2}\right) \right) \Big| < \bar{\vet{m}},
+\]
+\[
+|\bar{\vet{B}}(\vet{x}_1 + \vet{x}_2 \exp(j\pi))| < \bar{\vet{m}}, \quad
+\Big| \bar{\vet{B}} \left( \vet{x}_1 + \vet{x}_2 \exp\left(\frac{3\pi}{2}\right) \right) \Big| < \bar{\vet{m}}
+\]
