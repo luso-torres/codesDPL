@@ -1,0 +1,24 @@
+I have this configuration:
+The transmitter consists of a linear array of 31 elements, each $\lambda/2$ long, with an inter-element spacing of $\lambda/2$. Three receivers $\lambda/2$ long are randomly placed (let suppose at a distance 100\lambda, -30 degrees, 0 and 30 degrees) inside the ($-\alpha,\alpha$) region, alpha being 45 degrees. Two scattering points are located at coordinates ($x = 40\lambda$; $y = -30\lambda$) and ($x = 70\lambda$; $y = 50\lambda$),
+
+I want to calculate the LCMV for this system for a QPSK configuration constrained by:
+
+
+\[
+\text{arg} \min_{x_1, x_2,x_3} \left( ||\hat{\vet{A}}\vet{x}_1 - \hat{\vet{u}}_1||_2 + ||\hat{\vet{A}}\vet{x}_2 - \hat{\vet{u}}_2||_2 + ||\hat{\vet{A}}\vet{x}_3 - \hat{\vet{u}}_3||_2\right)^2
+\]
+subject to the following constraints:
+% \[
+% |\bar{\vet{A}}(\vet{x}_1 + \vet{x}_2)+ \vet{x}_2)| < \bar{\vet{m}}, \quad
+% \Big| \bar{\vet{A}} \left( \vet{x}_1 + \vet{x}_2 \exp\left(\frac{\pi}{2}\right) \right) \Big| < \bar{\vet{m}},
+% \]
+% \[
+% |\bar{\vet{A}}(\vet{x}_1 + \vet{x}_2 \exp(j\pi))| < \bar{\vet{m}}, \quad
+% \Big| \bar{\vet{A}} \left( \vet{x}_1 + \vet{x}_2 \exp\left(\frac{3\pi}{2}\right) \right) \Big| < \bar{\vet{m}}
+% \]
+\[
+|\bar{\vet{A}}(\vet{x}_1 + \vet{x}_2\exp(j\phi)+ \vet{x}_3\exp(j\psi))|^2 < \bar{\vet{m}}^2
+\]
+where $(\phi,\psi)$ assume all values in the QPSK phase combination in $(0\pi/2,\pi,3\pi/2)$.
+please consider a covariance matrix with np.eyes if is easier at the start.
+ u_1, u_2 and u_3 are simply the basic canonical basis of a 3 dimensional space
