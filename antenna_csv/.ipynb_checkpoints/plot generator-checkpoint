@@ -1,0 +1,11 @@
+import pandas as pd
+
+# Load the original CSV file
+df = pd.read_csv("original_file.csv")
+
+# Drop the 'lambda_g [mm]' column if it exists
+if 'lambda_g [mm]' in df.columns:
+    df = df.drop(columns=['lambda_g [mm]'])
+
+# Save to a new CSV file
+df.to_csv("cleaned_file.csv", index=False)
